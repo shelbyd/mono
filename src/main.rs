@@ -1,9 +1,15 @@
+//! Command line utilities for managing mono-repos.
+//!
+//! Meant to be used by developers and in CI/CD.
+
 use std::error::Error;
 use structopt::StructOpt;
 
 mod commands;
+mod interpolated_string;
 mod monofile;
 
+pub use interpolated_string::*;
 pub use monofile::*;
 
 fn main() -> Result<(), Box<dyn Error>> {

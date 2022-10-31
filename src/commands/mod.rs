@@ -24,13 +24,13 @@ impl SyncCommand {
 
             let mut interpolation_vars = HashMap::new();
             let dir_slug = dir.to_string_lossy().replace("/", "-");
-            interpolation_vars.insert("dir_slug".to_string(), dir_slug);
+            interpolation_vars.insert("dir_slug", dir_slug);
 
             for sync in &monofile.sync_files {
                 for entry in glob::glob(&dir.join(&sync.from.0).display().to_string())? {
                     let from = entry?;
                     interpolation_vars.insert(
-                        "file_name".to_string(),
+                        "file_name",
                         from.file_name().unwrap().to_string_lossy().to_string(),
                     );
 
