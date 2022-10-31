@@ -42,6 +42,7 @@ struct Options {
 
 #[derive(StructOpt)]
 enum Command {
+    /// Ensure local directory is correct, changing files if necessary.
     Sync(commands::SyncCommand),
 }
 
